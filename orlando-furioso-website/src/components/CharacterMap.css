@@ -1,0 +1,12 @@
+.character-map {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr); /* 7 columns */
+  grid-auto-rows: 100px; /* Adjust row height as needed */
+  gap: 20px; /* Adjust gap between grid items as needed */
+}
+
+.relationship-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+}

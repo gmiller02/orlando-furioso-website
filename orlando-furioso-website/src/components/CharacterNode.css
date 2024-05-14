@@ -1,0 +1,11 @@
+.character-node {
+    position: relative;
+    padding: 5px;
+  }
+  
+  .character-node {
+    background-color: #fff;
+    padding: 5px;
+    color: #000000;
+    font-family: 'Book Antiqua', serif;
+  }
