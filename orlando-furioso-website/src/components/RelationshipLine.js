@@ -1,11 +1,6 @@
 import React from 'react';
 
-const RelationshipLine = ({ start, end, type }) => {
-  const startX = start.x + 50; // Adjust for character node size
-  const startY = start.y + 50; // Adjust for character node size
-  const endX = end.x + 50; // Adjust for character node size
-  const endY = end.y + 50; // Adjust for character node size
-
+const RelationshipLine = ({ startX, startY, endX, endY, type }) => {
   const style = {
     position: 'absolute',
     left: Math.min(startX, endX),
@@ -21,21 +16,3 @@ const RelationshipLine = ({ start, end, type }) => {
 };
 
 export default RelationshipLine;
-
-// import React from 'react';
-
-// const RelationshipLine = ({ start, end, type }) => {
-//   return (
-//     <div
-//       className={`relationship-line ${type}`}
-//       style={{
-//         left: start.x,
-//         top: start.y,
-//         width: Math.abs(end.x - start.x),
-//         height: Math.abs(end.y - start.y),
-//       }}
-//     ></div>
-//   );
-// };
-
-// export default RelationshipLine;

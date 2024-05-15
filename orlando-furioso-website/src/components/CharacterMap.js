@@ -6,39 +6,50 @@ import DescriptionBox from './DescriptionBox';
 
 const CharacterMap = ({ characters, relationships }) => {
   const [selectedCharacter, setSelectedCharacter] = useState(null);
+  const [position, setPosition] = useState({});
 
   const handleClick = (character) => {
     setSelectedCharacter(selectedCharacter === character ? null : character);
+  };
+
+  const handlePosition = (character, x, y) => {
+    setPosition({ ...position, [character.name]: { x, y } });
   };
 
   return (
     <div className="character-map-container">
       <div className="character-map">
         {characters.map((character, index) => (
-          <div
+          <CharacterNode
             key={index}
-            className={`character-node ${selectedCharacter === character ? 'selected' : ''}`}
-            onClick={() => handleClick(character)}
-          >
-            <p>{character.name}</p>
-          </div>
+            character={character}
+            onClick={handleClick}
+            getPosition={handlePosition}
+          />
         ))}
 
         {/* Render relationship lines */}
         {relationships.map((relationship, index) => {
           const [charA, charB] = relationship.characters;
-          const start = characters.find(char => char.name === charA);
-          const end = characters.find(char => char.name === charB);
-          return (
-            <RelationshipLine key={index} start={start} end={end} type={relationship.type} />
-          );
+          const start = position[charA];
+          const end = position[charB];
+          return start && end ? (
+            <RelationshipLine
+              key={index}
+              startX={start.x}
+              startY={start.y}
+              endX={end.x}
+              endY={end.y}
+              type={relationship.type}
+            />
+          ) : null;
         })}
 
-{selectedCharacter && (
-        <div className="description-box">
-          <DescriptionBox character={selectedCharacter} />
-        </div>
-      )}
+        {selectedCharacter && (
+          <div className="description-box">
+            <DescriptionBox character={selectedCharacter} />
+          </div>
+        )}
       </div>
     </div>
   );
