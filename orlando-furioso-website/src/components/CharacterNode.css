@@ -8,4 +8,10 @@
     padding: 5px;
     color: #000000;
     font-family: 'Book Antiqua', serif;
+    border-radius: 70%;
+    align-items: center;
+    display: flex;
+  justify-content: center; /* Center text horizontally */
+  align-items: center; /* Center text vertically */
+
   }

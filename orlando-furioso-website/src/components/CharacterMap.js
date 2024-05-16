@@ -18,15 +18,14 @@ const CharacterMap = ({ characters, relationships }) => {
 
   return (
     <div className="character-map-container">
+      {selectedCharacter && (
+          <div className="description-box">
+            <DescriptionBox character={selectedCharacter} />
+            <br></br>
+          </div>
+        )}
       <div className="character-map">
-        {characters.map((character, index) => (
-          <CharacterNode
-            key={index}
-            character={character}
-            onClick={handleClick}
-            getPosition={handlePosition}
-          />
-        ))}
+
 
         {/* Render relationship lines */}
         {relationships.map((relationship, index) => {
@@ -45,11 +44,16 @@ const CharacterMap = ({ characters, relationships }) => {
           ) : null;
         })}
 
-        {selectedCharacter && (
-          <div className="description-box">
-            <DescriptionBox character={selectedCharacter} />
-          </div>
-        )}
+        {characters.map((character, index) => (
+          <CharacterNode
+            key={index}
+            character={character}
+            onClick={handleClick}
+            getPosition={handlePosition}
+          />
+        ))}
+
+    
       </div>
     </div>
   );
