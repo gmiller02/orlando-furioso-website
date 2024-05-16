@@ -7,8 +7,12 @@ const CharacterNode = ({ character, onClick, getPosition }) => {
     onClick(character);
   };
 
+  // Determine the CSS class based on the character's army
+  const armyClass = character.army === "Charlemagne's Army" ? "charlemagne-army" : 
+                   character.army === "Agramante's Army" ? "agramante-army" : "";
+
   return (
-    <div className="character-node" onMouseDown={handleMouseDown}>
+    <div className={`character-node ${armyClass}`} onMouseDown={handleMouseDown}>
       <p>{character.name}</p>
     </div>
   );

@@ -1,0 +1,43 @@
+.website-key-container {
+    position: relative;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+  }
+  
+  .website-key {
+    background-color: white;
+    border: 1px solid black;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+  }
+  
+  .key-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .key-color {
+    width: 20px;
+    height: 20px;
+    border: 1px solid black;
+    margin-right: 10px;
+  }
+  
+  .red {
+    background-color: red;
+  }
+  
+  .blue {
+    background-color: blue;
+  }
+  
+  .green {
+    background-color: green;
+  }
+  
+  .key-text {
+    margin: 0;
+  }

@@ -9,3 +9,11 @@
     color: #000000;
     font-family: 'Book Antiqua', serif;
   }
+
+  .charlemagne-army {
+    border: 2px solid blue; /* Change border color for Charlemagne's Army */
+  }
+  
+  .agramante-army {
+    border: 2px solid green; /* Change border color for Agramante's Army */
+  }
